@@ -1,0 +1,229 @@
+
+  
+    
+ <!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>搜索 | AK-47&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="AK-47">
+    
+    <meta name="description" content="AK-47的博客专栏，欢迎来到AK-47的博客！">
+    
+    <link rel="alternate" href="atom.xml" title="AK-47&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+    <body>
+      <header>
+        <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="AK-47&#39;s blog">AK-47&#39;s blog</a></h1>
+				<h2 class="blog-motto">人生不止眼前的苟且，还有代码与远方 . . .</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">文章</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/atom.xml">RSS订阅</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="搜索">
+					</form>
+					
+					</li>
+				</ul>
+			</ul></nav>			
+</div>
+
+      </header>
+          
+<div id="searchdiv">
+    <img id="loadgif" src="/img/load.gif" style="position:absolute;left: 45%;top:50%;display:none;">
+    <p id="search_prompt" style="position:absolute;left:45%;top:50%;display:none;"></p>
+    <div>
+        <iframe id="baidu-search" name="baidu-search" marginheight="0px" marginwidth="0px" width="100%" height="1000px" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>  
+
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script language="JavaScript">
+
+    function createRequestObject() {
+        FORM_DATA = new Object();
+        separator = ',';
+        query = '' +decodeURI( this.location);
+        qu = query
+        query = query.substring((query.indexOf('?')) + 1);
+        // Keep everything after the question mark '?'.
+        if (query.length < 1) { return false; }  // Perhaps we got some bad data?
+        keypairs = new Object();
+        numKP = 1;
+        // Local vars used to store and keep track of name/value pairs
+        // as we parse them back into a usable form.
+        while (query.indexOf('&') > -1) {
+        keypairs[numKP] = query.substring(0,query.indexOf('&'));
+        query = query.substring((query.indexOf('&')) + 1);
+        numKP++;
+        }
+        keypairs[numKP] = query;
+        for (i in keypairs) {
+        keyName = keypairs[i].substring(0,keypairs[i].indexOf('='));
+        keyValue = keypairs[i].substring((keypairs[i].indexOf('=')) + 1);
+        while (keyValue.indexOf('+') > -1) {
+        keyValue = keyValue.substring(0,keyValue.indexOf('+')) + ' ' + keyValue.substring(keyValue.indexOf('+') + 1);
+        }
+        keyValue = unescape(keyValue);
+        if (FORM_DATA[keyName]) {
+        FORM_DATA[keyName] = FORM_DATA[keyName] + separator + keyValue;
+        } else {
+        FORM_DATA[keyName] = keyValue;
+        }
+        }
+        return FORM_DATA;
+    }
+
+    $("body").css("background","#FFFFFF");
+    FORM_DATA = createRequestObject();
+    var q=FORM_DATA['q'];
+    if (q){
+        $("#search_prompt").css("display","none");
+        $("#loadgif").css("display","inline");
+        var search = $("#baidu-search");
+        //820421516555549197
+        var zhanneiid = '17834434419516021878';
+        search.attr("src",'http://zhannei.baidu.com/cse/search?entry=1&s='+zhanneiid+'&q='+q);
+        search.load(function() {
+            $("#loadgif").css("display","none");
+        });
+    }else{
+        $("#loadgif").css("display","none");
+        $("#search_prompt").css("display","block");
+        $("#search_prompt").html('请使用上方搜索框，示例：<a href="search.html?q=blog">blog</a>。');
+    }
+
+</script>
+
+      <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script type="text/javascript">
+	(function($) { 
+		// When to show the scroll link
+		// higher number = scroll link appears further down the page   
+		var upperLimit = 300;
+		
+		// Our scroll link element
+		var scrollElem = $('#totop');
+	   
+		// Scroll to top speed
+		var scrollSpeed = 800;
+	   
+		// Show and hide the scroll to top link based on scroll position   
+		scrollElem.hide();
+		$(window).scroll(function () {            
+			var scrollTop = $(document).scrollTop();       
+			if ( scrollTop > upperLimit ) {
+				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
+			}else{       
+				$(scrollElem).stop().fadeTo(300, 0); // fade out
+			}
+		});
+		// Scroll to top animation on click
+		$(scrollElem).click(function(){
+			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+		});
+	})(jQuery);
+</script>
+
+
+    </body>
+   </html>   
+
+
+  
+

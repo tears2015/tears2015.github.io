@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AK-47&#39;s blog</title>
+  
+  <subtitle>人生不止眼前的苟且，还有代码与远方 . . .</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://ak47-sec.com/"/>
+  <updated>2018-03-15T04:57:46.000Z</updated>
+  <id>http://ak47-sec.com/</id>
+  
+  <author>
+    <name>AK-47</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo搭建博客No.I</title>
+    <link href="http://ak47-sec.com/2018/03/14/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2No-I/"/>
+    <id>http://ak47-sec.com/2018/03/14/Hexo搭建博客No-I/</id>
+    <published>2018-03-14T09:57:29.000Z</published>
+    <updated>2018-03-15T04:57:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>思维导图总览：</strong><br><img src="img1.jpg" alt="思维导图"></p><p><body onload="prettyPrint()"></body><br><strong>什么是Hexo：</strong><br>hexo是Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><p><strong>安装Hexo的前置条件：</strong></p><blockquote><p>Node.js <a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">安装教程</a><br>Git <a href="https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener">安装教程</a></p></blockquote><p><strong>Windows用户安装：</strong><br>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选Add to PATH选项。另外，您也可以使用Git Bash，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用Git Bash来进行操作。</p><p><strong>安装 Hexo</strong><br>第一步：打开cmd</p><p>第二步：进入NodeJS的安装目录<br><img src="cmd.jpg" alt="NodeJS"><br>第三步：开始安装hexo，利用 npm 命令即可安装。</p><pre class="prettyprint linenums">npm install -g hexo</pre><p>来杯咖啡稍作等待，即可安装成功<br><img src="npm.jpg" alt="npm"><br>第四步：开始搭建博客<br>新建一个文件夹，例如blog，此处blog便是你的博客目录，当然其他什么名字也是极好的，看心情了，此时最好将此目录备份到云盘或者其他地方，以防文件夹丢失后博客就没有了。</p><pre class="prettyprint linenums">mkdir blog && cd blog</pre>进入blog文件夹，右键点击Git Bash Here，接下来执行初始化文件夹命令：<pre class="prettyprint linenums">npm init</pre>安装依赖和插件<pre class="prettyprint linenums">hexo install</pre><p>新建完成后，指定文件夹的目录如下：</p><pre><code>├── _config.yml├── package.json├── scaffolds├── source|   ├── _drafts|   └── _posts└── themes</code></pre><p>第五步：生成静态页面</p><p><pre class="prettyprint linenums">hexo g</pre><br>至此，博客搭建成功！当然，仅仅是本地的</p><p>第六步：启动服务器进行本地预览</p><p><pre class="prettyprint linenums">hexo s  ||  hexo server  || hexo server -p 5000</pre><br>备注：执行3条命令中任何一条均可以，我的4000端口被占用，所以使用5000。</p><p>第七步：本地预览<br>打开浏览器访问 <a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a> 访问初始化页面<br><img src="hexo.jpg" alt="NHEXO"></p><p><strong>基础配置</strong><br>现在可以在 _config.yml中修改大部份的配置</p><blockquote><p>参数    描述<br>title    网站标题<br>subtitle    网站副标题<br>description    网站描述<br>author    您的名字<br>language    网站使用的语言<br>timezone    网站时区。Hexo默认使用您电脑的时区,时区列表：America/New_York, Japan, UTC等 </p></blockquote><p><strong>扩展</strong></p><blockquote><p>参数    描述<br>theme    当前主题名称,值为false时禁用主题<br>deploy    部署部分的设置</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;思维导图总览：&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;img1.jpg&quot; alt=&quot;思维导图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;body onload=&quot;prettyPrint()&quot;&gt;&lt;/body&gt;&lt;br&gt;&lt;strong&gt;什么是Hexo：&lt;/strong&gt;&lt;br&gt;h
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://ak47-sec.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

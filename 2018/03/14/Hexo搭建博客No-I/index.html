@@ -1,0 +1,413 @@
+
+ <!DOCTYPE HTML>
+<html  xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Hexo搭建博客No.I | AK-47&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="AK-47">
+    
+    <meta name="description" content="思维导图总览：
+什么是Hexo：hexo是Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+安装Hexo的前置条件：
+
+Node.js 安装教程Git 安装教程
+
+Windows用户安装：对于window">
+    
+    <meta name="keywords" content="Hexo">
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="ak-47" />
+    <meta name="twitter:title" content="Hexo搭建博客No.I | AK-47&#39;s blog" />
+      
+    
+    
+    <link rel="alternate" href="atom.xml" title="AK-47&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="stylesheet" href="/css/prettify.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/css/sons-of-obsidian.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="AK-47&#39;s blog">AK-47&#39;s blog</a></h1>
+				<h2 class="blog-motto">人生不止眼前的苟且，还有代码与远方 . . .</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">文章</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/atom.xml">RSS订阅</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/03/14/Hexo搭建博客No-I/" title="Hexo搭建博客No.I" itemprop="url">Hexo搭建博客No.I</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
+    
+      <a href="http://ak47-sec.com" title="AK-47">AK-47</a>
+    </p>
+  -->  
+  <p class="article-time">
+    <time datetime="2018-03-14T09:57:29.000Z" itemprop="datePublished">2018-03-14</time>
+    Updated:<time datetime="2018-03-15T04:57:46.000Z" itemprop="dateModified">2018-03-15</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p><strong>思维导图总览：</strong><br><img src="img1.jpg" alt="思维导图"></p>
+<p><body onload="prettyPrint()"></body><br><strong>什么是Hexo：</strong><br>hexo是Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p><strong>安装Hexo的前置条件：</strong></p>
+<blockquote>
+<p>Node.js <a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">安装教程</a><br>Git <a href="https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener">安装教程</a></p>
+</blockquote>
+<p><strong>Windows用户安装：</strong><br>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选Add to PATH选项。另外，您也可以使用Git Bash，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用Git Bash来进行操作。</p>
+<p><strong>安装 Hexo</strong><br>第一步：打开cmd</p>
+<p>第二步：进入NodeJS的安装目录<br><img src="cmd.jpg" alt="NodeJS"><br>第三步：开始安装hexo，利用 npm 命令即可安装。</p>
+<pre class="prettyprint linenums">
+npm install -g hexo
+</pre>
+
+<p>来杯咖啡稍作等待，即可安装成功<br><img src="npm.jpg" alt="npm"><br>第四步：开始搭建博客<br>新建一个文件夹，例如blog，此处blog便是你的博客目录，当然其他什么名字也是极好的，看心情了，此时最好将此目录备份到云盘或者其他地方，以防文件夹丢失后博客就没有了。</p>
+<pre class="prettyprint linenums">
+mkdir blog && cd blog
+</pre>
+进入blog文件夹，右键点击Git Bash Here，接下来执行初始化文件夹命令：
+<pre class="prettyprint linenums">
+npm init
+</pre>
+安装依赖和插件
+<pre class="prettyprint linenums">
+hexo install
+</pre>
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<pre><code>├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre><p>第五步：生成静态页面</p>
+<p><pre class="prettyprint linenums">hexo g</pre><br>至此，博客搭建成功！当然，仅仅是本地的</p>
+<p>第六步：启动服务器进行本地预览</p>
+<p><pre class="prettyprint linenums">hexo s  ||  hexo server  || hexo server -p 5000</pre><br>备注：执行3条命令中任何一条均可以，我的4000端口被占用，所以使用5000。</p>
+<p>第七步：本地预览<br>打开浏览器访问 <a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a> 访问初始化页面<br><img src="hexo.jpg" alt="NHEXO"></p>
+<p><strong>基础配置</strong><br>现在可以在 _config.yml中修改大部份的配置</p>
+<blockquote>
+<p>参数    描述<br>title    网站标题<br>subtitle    网站副标题<br>description    网站描述<br>author    您的名字<br>language    网站使用的语言<br>timezone    网站时区。Hexo默认使用您电脑的时区,时区列表：America/New_York, Japan, UTC等 </p>
+</blockquote>
+<p><strong>扩展</strong></p>
+<blockquote>
+<p>参数    描述<br>theme    当前主题名称,值为false时禁用主题<br>deploy    部署部分的设置</p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
+
+  
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone"></a>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a href="http://www.jiathis.com/share?uid=1987046" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1987046" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  </div>
+
+
+</footer>   	       
+	</article>
+	
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-Hexo搭建博客No.I" data-title="Hexo搭建博客No.I" data-url="http://ak47-sec.com/2018/03/14/Hexo搭建博客No-I/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+      <li><a href="http://www.freebuf.com" target="_blank" title="FreeBuf">FreeBuf</a></li>
+      <li><a href="https://github.com/tears2015" target="_blank" title="ak-47 github">GitHub</a></li>
+      <li><a href="https://bbs.pediy.com" target="_blank" title="看雪">看雪</a></li>
+      <li><a href="https://www.sec-wiki.com/topic/12" target="_blank" title="在线工具">在线工具</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><!-- 加载本地Google Prettify 代码高亮js代码-->
+<script src="/js/prettify.js"></script> 
+
+<!-- 用于Google Prettify 代码高亮，给pre标签添加class "prettyprint linenums"，有行号 -->
+<!-- jQuery的$(document).ready(function(){})是当页面的标准DOM元素被解析成DOM树后就执行-->
+<script type="text/javascript">
+$(document).ready(function(){
+ $('pre').addClass('prettyprint linenums');
+   prettyPrint();
+ })
+
+ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:scroll;');
+</script>
+
+<div id="footer" >
+	
+	
+	<section class="info">
+		<p> Let bygones be bygones. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://twitter.com/ak-47" target="_blank" title="twitter"></a>
+		
+		
+		<a href="https://github.com/tears2015" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="pacman">pacman</a> © 2018 
+		
+		<a href="http://ak47-sec.com" target="_blank" title="AK-47">AK-47</a>
+		
+		</p>
+</div></footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"ak47githubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script type="text/javascript">
+	(function($) { 
+		// When to show the scroll link
+		// higher number = scroll link appears further down the page   
+		var upperLimit = 300;
+		
+		// Our scroll link element
+		var scrollElem = $('#totop');
+	   
+		// Scroll to top speed
+		var scrollSpeed = 800;
+	   
+		// Show and hide the scroll to top link based on scroll position   
+		scrollElem.hide();
+		$(window).scroll(function () {            
+			var scrollTop = $(document).scrollTop();       
+			if ( scrollTop > upperLimit ) {
+				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
+			}else{       
+				$(scrollElem).stop().fadeTo(300, 0); // fade out
+			}
+		});
+		// Scroll to top animation on click
+		$(scrollElem).click(function(){
+			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+		});
+	})(jQuery);
+</script>
+
+
+  </body>
+</html>
+
