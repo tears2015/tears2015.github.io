@@ -4,21 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo搭建博客No-II | AK-47&#39;s blog</title>
+    <title>Hexo常用命令 | AK-47&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="AK-47">
     
-    <meta name="description" content="test page
-常见报错1.找不到git部署ERROR Deployer not found: git
-解决方法:
-npm install hexo-deployer-git --save">
+    <meta name="description" itemprop="description" content="Hexo常用命令">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="ak-47" />
-    <meta name="twitter:title" content="Hexo搭建博客No-II | AK-47&#39;s blog" />
+    <meta name="twitter:title" content="Hexo常用命令 | AK-47&#39;s blog" />
+      
+        <meta name="twitter:description" content="Hexo常用命令" />
       
     
     
@@ -77,7 +76,7 @@ npm install hexo-deployer-git --save">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/03/15/Hexo搭建博客No-II/" title="Hexo搭建博客No-II" itemprop="url">Hexo搭建博客No-II</a>
+      <a href="/2018/03/19/Hexo常用命令/" title="Hexo常用命令" itemprop="url">Hexo常用命令</a>
   </h1>
   <!-- 显示作者
   <p class="article-author">By
@@ -86,8 +85,8 @@ npm install hexo-deployer-git --save">
     </p>
   -->  
   <p class="article-time">
-    <time datetime="2018-03-15T08:36:09.000Z" itemprop="datePublished">2018-03-15</time>
-    更新日期:<time datetime="2018-03-19T09:39:50.473Z" itemprop="dateModified">2018-03-19</time>
+    <time datetime="2018-03-19T08:54:02.000Z" itemprop="datePublished">2018-03-19</time>
+    更新日期:<time datetime="2018-03-19T09:54:03.325Z" itemprop="dateModified">2018-03-19</time>
     
   </p>
 </header>
@@ -97,14 +96,49 @@ npm install hexo-deployer-git --save">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见报错"><span class="toc-number">1.</span> <span class="toc-text">常见报错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-找不到git部署"><span class="toc-number">1.1.</span> <span class="toc-text">1.找不到git部署</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo安装"><span class="toc-number">1.</span> <span class="toc-text">hexo安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简写"><span class="toc-number">2.</span> <span class="toc-text">简写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">3.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#监视文件变动"><span class="toc-number">4.</span> <span class="toc-text">监视文件变动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写作"><span class="toc-number">5.</span> <span class="toc-text">写作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明"><span class="toc-number">5.1.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例如"><span class="toc-number">5.2.</span> <span class="toc-text">例如</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#布局文件路径"><span class="toc-number">6.</span> <span class="toc-text">布局文件路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署"><span class="toc-number">7.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#草稿"><span class="toc-number">8.</span> <span class="toc-text">草稿</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何卸载Hexo"><span class="toc-number">9.</span> <span class="toc-text">如何卸载Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#友情链接："><span class="toc-number">10.</span> <span class="toc-text">友情链接：</span></a></li></ol>
 		</div>
 		
-		<p>test page</p>
-<h1 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h1><h2 id="1-找不到git部署"><a href="#1-找不到git部署" class="headerlink" title="1.找不到git部署"></a>1.找不到git部署</h2><pre><code>ERROR Deployer not found: git
-</code></pre><p>解决方法:</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre>  
+		<h1 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h1><pre><code>npm install hexo -g #安装  
+npm update hexo -g #升级  
+hexo init #初始化
+</code></pre><h1 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h1><pre><code>hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章
+hexo p == hexo publish
+hexo g == hexo generate #生成
+hexo s == hexo server  #启动服务预览
+hexo d == hexo deploy #部署
+</code></pre><h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><pre><code>hexo server   # Hexo会监视文件变动并自动更新，您无须重启服务器。
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+
+hexo clean   #清除缓存
+hexo g   #生成静态网页
+hexo d   #开始部署
+</code></pre><h1 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h1><pre><code>hexo generate   #使用 Hexo 生成静态文件快速而且简单
+hexo generate --watch   #监视文件变动
+</code></pre><h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><pre><code>hexo new [layout] &lt;title&gt;
+layout    布局
+title    标题
+date    文件建立日期
+</code></pre><h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p>title: 使用Hexo搭建个人博客<br>layout: post<br>date: 2014-03-03 19:07:43<br>comments: true<br>categories: Blog<br>tags: [Hexo]<br>keywords: Hexo, Blog<br>description: 页面描述信息  </p>
+<h2 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h2><pre><code>hexo new page pageName  #新建页面
+hexo new articleName  #新建文章
+</code></pre><h1 id="布局文件路径"><a href="#布局文件路径" class="headerlink" title="布局文件路径"></a>布局文件路径</h1><pre><code>post    source/_posts
+page    source
+draft    source/_drafts
+</code></pre><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>两个命令的作用是相同的：</p>
+<pre><code>hexo generate --deploy
+hexo deploy --generate
+
+hexo d  #部署  
+hexo d -g  #可与hexo g合并为
+</code></pre><h1 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h1><pre><code>hexo publish [layout] &lt;title&gt;
+</code></pre><h1 id="如何卸载Hexo"><a href="#如何卸载Hexo" class="headerlink" title="如何卸载Hexo"></a>如何卸载Hexo</h1><pre><code>npm uninstall hexo-cli -g  #3.0.0版本执行
+npm uninstall hexo -g  #旧版本执行
+</code></pre><h1 id="友情链接："><a href="#友情链接：" class="headerlink" title="友情链接："></a>友情链接：</h1><p><a href="https://www.jianshu.com/p/05289a4bc8b2" title="如何搭建一个独立博客——简明Github Pages与Hexo教程" target="_blank" rel="noopener">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
+<p><a href="http://wiki.jikexueyuan.com/project/hexo-document/commands.html" title="极客学院Hexo中文版指令" target="_blank" rel="noopener">极客学院Hexo中文版指令</a></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-share" id="share">
@@ -148,19 +182,11 @@ var jiathis_config = {data_track_clickback:'true'};
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/03/19/Hexo常用命令/" title="Hexo常用命令">
-  <strong>上一篇:</strong><br/>
-  <span>
-  Hexo常用命令</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/03/14/Hexo搭建博客No-I/"  title="Hexo搭建博客No.I">
+<a href="/2018/03/15/Hexo搭建博客No-II/"  title="Hexo搭建博客No-II">
  <strong>下一篇:</strong><br/> 
- <span>Hexo搭建博客No.I
+ <span>Hexo搭建博客No-II
 </span>
 </a>
 </div>
@@ -170,7 +196,7 @@ var jiathis_config = {data_track_clickback:'true'};
 	<!-- 多说-->
 
 <section class="comment">
-<div class="ds-thread" data-thread-key="post-Hexo搭建博客No-II" data-title="Hexo搭建博客No-II" data-url="http://ak47-sec.com/2018/03/15/Hexo搭建博客No-II/"></div>
+<div class="ds-thread" data-thread-key="post-Hexo常用命令" data-title="Hexo常用命令" data-url="http://ak47-sec.com/2018/03/19/Hexo常用命令/"></div>
 </section>
 <!-- disqus-->
 
