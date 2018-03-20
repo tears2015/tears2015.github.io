@@ -43,17 +43,13 @@
     <link href="http://ak47-sec.com/2018/03/15/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2No-II/"/>
     <id>http://ak47-sec.com/2018/03/15/Hexo搭建博客No-II/</id>
     <published>2018-03-15T08:36:09.000Z</published>
-    <updated>2018-03-19T09:39:50.473Z</updated>
+    <updated>2018-03-20T02:06:14.112Z</updated>
     
-    <content type="html"><![CDATA[<p>test page</p><h1 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h1><h2 id="1-找不到git部署"><a href="#1-找不到git部署" class="headerlink" title="1.找不到git部署"></a>1.找不到git部署</h2><pre><code>ERROR Deployer not found: git</code></pre><p>解决方法:</p><pre><code>npm install hexo-deployer-git --save</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="创建-Github-域名和仓库"><a href="#创建-Github-域名和仓库" class="headerlink" title="创建 Github 域名和仓库"></a>创建 Github 域名和仓库</h1><p><body onload="prettyPrint()"></body></p><h2 id="注册github账户"><a href="#注册github账户" class="headerlink" title="注册github账户"></a>注册github账户</h2><p>注册一个<a href="https://github.com/" title="注册GitHub账户" target="_blank" rel="noopener">注册GitHub账户</a> 账号，已有的可以直接创建仓库，注册的话注意username，这会影响到你的域名，所以先想好用户名哦。</p><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>然后创建一个仓库(repository) 来存储我们的网站，点击首页 New repository 按钮创建仓库, Respository name 中的 username.github.io 的 username 一定与前面的 Owner 保持一致。</p><h1 id="设置github-pages"><a href="#设置github-pages" class="headerlink" title="设置github pages"></a>设置github pages</h1><p>创建成功后，回到主页面，点击进入你刚刚创建好的仓库：<br><img src="git1.jpg" alt="git1"><br>接着点击settings，进入仓库管理:<br><img src="git2.jpg" alt="git2"><br>更新你的站点:<br><img src="git3.jpg" alt="git3"><br>选择主题并发布：<br><img src="git4.jpg" alt="git4"><br>至此，github pages就发布成功了。试试在浏览器的地址栏输入”github用户名.github.io” 可以访问到默认页面。</p><h1 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h1><p>打开安装好的NodeJS的根目录，然后点击进入刚刚新建的blog文件夹：<br><img src="git5.jpg" alt="git5"><br>现在需要编辑Blog文件夹下的 _config.yml 文件，与自己 Github 账号的 Repository 仓库建立关联。</p><p><strong> 基本配置：</strong><br>修改这几个必须设置的键值对，记得保存，注意配置的键值对之间一定要有空格。</p><pre class="prettyprint linenums">title: xxxx    //网站标题author: xxx   //作者名字language: zh-Hans    //网站使用的语言 中文    deploy:   type: git     repo: https://github.com/username/username.github.io.git   branch: master</pre><p>本人配置信息如下：<br><img src="git6.jpg" alt="git6"></p><p><strong> 注意：</strong><br>repo:[必须有空格]  输入您的Github创建的仓库所对应的URL链接，复制粘贴一下就OK啦。</p><p>接下来，回到你的cmd窗口，只需执行如下命令：</p><pre class="prettyprint">npm install hexo-deployer-git --save （这命令是为了解决hexo新版本的部署问题）hexo g 回车 （这是重新生成blog）hexo d 回车 （这是将本地blog部署到github的仓库）</pre><p>现在，试试在浏览器的地址栏输入”github用户名.github.io”，此时，你应该会看到这样的界面：<br><img src="git7.jpg" alt="git7"></p><h1 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h1><h2 id="找不到git部署"><a href="#找不到git部署" class="headerlink" title="找不到git部署"></a>找不到git部署</h2><pre><code>ERROR Deployer not found: git</code></pre><p>解决方法:</p><pre class="prettyprint">npm install hexo-deployer-git --save</pre><h2 id="hexo-d出错"><a href="#hexo-d出错" class="headerlink" title="hexo d出错"></a>hexo d出错</h2><p><img src="hexo_d_error.jpg" alt="error"><br>解决方法:<br><img src="hexo_d_ok.jpg" alt="ok"></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;test page&lt;/p&gt;
-&lt;h1 id=&quot;常见报错&quot;&gt;&lt;a href=&quot;#常见报错&quot; class=&quot;headerlink&quot; title=&quot;常见报错&quot;&gt;&lt;/a&gt;常见报错&lt;/h1&gt;&lt;h2 id=&quot;1-找不到git部署&quot;&gt;&lt;a href=&quot;#1-找不到git部署&quot; class=
-      
+      部署博客到github
     
     </summary>
     

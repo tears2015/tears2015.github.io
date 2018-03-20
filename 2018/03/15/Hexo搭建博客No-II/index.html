@@ -9,16 +9,15 @@
     
     <meta name="author" content="AK-47">
     
-    <meta name="description" content="test page
-常见报错1.找不到git部署ERROR Deployer not found: git
-解决方法:
-npm install hexo-deployer-git --save">
+    <meta name="description" itemprop="description" content="部署博客到github">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="ak-47" />
     <meta name="twitter:title" content="Hexo搭建博客No-II | AK-47&#39;s blog" />
+      
+        <meta name="twitter:description" content="部署博客到github" />
       
     
     
@@ -44,7 +43,7 @@ npm install hexo-deployer-git --save">
 				<h1 class="site-name"><a href="/" title="AK-47&#39;s blog">AK-47&#39;s blog</a></h1>
 				<h2 class="blog-motto">人生不止眼前的苟且，还有代码与远方 . . .</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -62,7 +61,7 @@ npm install hexo-deployer-git --save">
 					
 					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="Search" />
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="搜索" />
 					</form>
 					
 					</li>
@@ -87,7 +86,7 @@ npm install hexo-deployer-git --save">
   -->  
   <p class="article-time">
     <time datetime="2018-03-15T08:36:09.000Z" itemprop="datePublished">2018-03-15</time>
-    Updated:<time datetime="2018-03-19T09:39:50.473Z" itemprop="dateModified">2018-03-19</time>
+    更新日期:<time datetime="2018-03-20T02:06:14.112Z" itemprop="dateModified">2018-03-20</time>
     
   </p>
 </header>
@@ -96,15 +95,44 @@ npm install hexo-deployer-git --save">
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见报错"><span class="toc-number">1.</span> <span class="toc-text">常见报错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-找不到git部署"><span class="toc-number">1.1.</span> <span class="toc-text">1.找不到git部署</span></a></li></ol></li></ol>
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建-Github-域名和仓库"><span class="toc-number">1.</span> <span class="toc-text">创建 Github 域名和仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册github账户"><span class="toc-number">1.1.</span> <span class="toc-text">注册github账户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建仓库"><span class="toc-number">1.2.</span> <span class="toc-text">创建仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置github-pages"><span class="toc-number">2.</span> <span class="toc-text">设置github pages</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置Github"><span class="toc-number">3.</span> <span class="toc-text">配置Github</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见报错"><span class="toc-number">4.</span> <span class="toc-text">常见报错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">4.1.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-d出错"><span class="toc-number">4.2.</span> <span class="toc-text">hexo d出错</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>test page</p>
-<h1 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h1><h2 id="1-找不到git部署"><a href="#1-找不到git部署" class="headerlink" title="1.找不到git部署"></a>1.找不到git部署</h2><pre><code>ERROR Deployer not found: git
+		<h1 id="创建-Github-域名和仓库"><a href="#创建-Github-域名和仓库" class="headerlink" title="创建 Github 域名和仓库"></a>创建 Github 域名和仓库</h1><p><body onload="prettyPrint()"></body></p>
+<h2 id="注册github账户"><a href="#注册github账户" class="headerlink" title="注册github账户"></a>注册github账户</h2><p>注册一个<a href="https://github.com/" title="注册GitHub账户" target="_blank" rel="noopener">注册GitHub账户</a> 账号，已有的可以直接创建仓库，注册的话注意username，这会影响到你的域名，所以先想好用户名哦。</p>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>然后创建一个仓库(repository) 来存储我们的网站，点击首页 New repository 按钮创建仓库, Respository name 中的 username.github.io 的 username 一定与前面的 Owner 保持一致。</p>
+<h1 id="设置github-pages"><a href="#设置github-pages" class="headerlink" title="设置github pages"></a>设置github pages</h1><p>创建成功后，回到主页面，点击进入你刚刚创建好的仓库：<br><img src="git1.jpg" alt="git1"><br>接着点击settings，进入仓库管理:<br><img src="git2.jpg" alt="git2"><br>更新你的站点:<br><img src="git3.jpg" alt="git3"><br>选择主题并发布：<br><img src="git4.jpg" alt="git4"><br>至此，github pages就发布成功了。试试在浏览器的地址栏输入”github用户名.github.io” 可以访问到默认页面。</p>
+<h1 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h1><p>打开安装好的NodeJS的根目录，然后点击进入刚刚新建的blog文件夹：<br><img src="git5.jpg" alt="git5"><br>现在需要编辑Blog文件夹下的 _config.yml 文件，与自己 Github 账号的 Repository 仓库建立关联。</p>
+<p><strong> 基本配置：</strong><br>修改这几个必须设置的键值对，记得保存，注意配置的键值对之间一定要有空格。</p>
+<pre class="prettyprint linenums">
+title: xxxx    //网站标题
+author: xxx   //作者名字
+language: zh-Hans    //网站使用的语言 中文    
+deploy:
+   type: git  
+   repo: https://github.com/username/username.github.io.git
+   branch: master
+</pre>
+
+<p>本人配置信息如下：<br><img src="git6.jpg" alt="git6"></p>
+<p><strong> 注意：</strong><br>repo:[必须有空格]  输入您的Github创建的仓库所对应的URL链接，复制粘贴一下就OK啦。</p>
+<p>接下来，回到你的cmd窗口，只需执行如下命令：</p>
+<pre class="prettyprint">
+npm install hexo-deployer-git --save （这命令是为了解决hexo新版本的部署问题）
+hexo g 回车 （这是重新生成blog）
+hexo d 回车 （这是将本地blog部署到github的仓库）
+</pre>
+
+<p>现在，试试在浏览器的地址栏输入”github用户名.github.io”，此时，你应该会看到这样的界面：<br><img src="git7.jpg" alt="git7"></p>
+<h1 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h1><h2 id="找不到git部署"><a href="#找不到git部署" class="headerlink" title="找不到git部署"></a>找不到git部署</h2><pre><code>ERROR Deployer not found: git
 </code></pre><p>解决方法:</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre>  
+<pre class="prettyprint">
+npm install hexo-deployer-git --save
+</pre>
+
+<h2 id="hexo-d出错"><a href="#hexo-d出错" class="headerlink" title="hexo d出错"></a>hexo d出错</h2><p><img src="hexo_d_error.jpg" alt="error"><br>解决方法:<br><img src="hexo_d_ok.jpg" alt="ok"></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-share" id="share">
@@ -150,7 +178,7 @@ var jiathis_config = {data_track_clickback:'true'};
  
  <div class="prev" >
  <a href="/2018/03/19/Hexo常用命令/" title="Hexo常用命令">
-  <strong>Prev:</strong><br/>
+  <strong>上一篇:</strong><br/>
   <span>
   Hexo常用命令</span>
 </a>
@@ -159,7 +187,7 @@ var jiathis_config = {data_track_clickback:'true'};
 
 <div class="next">
 <a href="/2018/03/14/Hexo搭建博客No-I/"  title="Hexo搭建博客No.I">
- <strong>Next:</strong><br/> 
+ <strong>下一篇:</strong><br/> 
  <span>Hexo搭建博客No.I
 </span>
 </a>
@@ -176,15 +204,15 @@ var jiathis_config = {data_track_clickback:'true'};
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分类</p>
 		<ul>
 		
 			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
@@ -195,7 +223,7 @@ var jiathis_config = {data_track_clickback:'true'};
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
@@ -205,7 +233,7 @@ var jiathis_config = {data_track_clickback:'true'};
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
       <li><a href="http://www.freebuf.com" target="_blank" title="FreeBuf">FreeBuf</a></li>
       <li><a href="https://github.com/tears2015" target="_blank" title="ak-47 github">GitHub</a></li>
@@ -216,7 +244,7 @@ var jiathis_config = {data_track_clickback:'true'};
 
 
   <div class="rsspart">
-	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
