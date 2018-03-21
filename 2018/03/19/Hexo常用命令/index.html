@@ -43,7 +43,7 @@
 				<h1 class="site-name"><a href="/" title="AK-47&#39;s blog">AK-47&#39;s blog</a></h1>
 				<h2 class="blog-motto">人生不止眼前的苟且，还有代码与远方 . . .</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -61,7 +61,7 @@
 					
 					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="搜索" />
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="Search" />
 					</form>
 					
 					</li>
@@ -86,7 +86,7 @@
   -->  
   <p class="article-time">
     <time datetime="2018-03-19T08:54:02.000Z" itemprop="datePublished">2018-03-19</time>
-    更新日期:<time datetime="2018-03-20T01:11:53.779Z" itemprop="dateModified">2018-03-20</time>
+    Updated:<time datetime="2018-03-20T01:11:53.779Z" itemprop="dateModified">2018-03-20</time>
     
   </p>
 </header>
@@ -95,7 +95,7 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo安装"><span class="toc-number">1.</span> <span class="toc-text">hexo安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简写"><span class="toc-number">2.</span> <span class="toc-text">简写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">3.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#监视文件变动"><span class="toc-number">4.</span> <span class="toc-text">监视文件变动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写作"><span class="toc-number">5.</span> <span class="toc-text">写作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明"><span class="toc-number">5.1.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例如"><span class="toc-number">5.2.</span> <span class="toc-text">例如</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#布局文件路径"><span class="toc-number">6.</span> <span class="toc-text">布局文件路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署"><span class="toc-number">7.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#草稿"><span class="toc-number">8.</span> <span class="toc-text">草稿</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何卸载Hexo"><span class="toc-number">9.</span> <span class="toc-text">如何卸载Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#友情链接："><span class="toc-number">10.</span> <span class="toc-text">友情链接：</span></a></li></ol>
 		</div>
 		
@@ -210,10 +210,18 @@ var jiathis_config = {data_track_clickback:'true'};
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2018/03/21/shift后门妙用/" title="shift后门妙用">
+  <strong>Prev:</strong><br/>
+  <span>
+  shift后门妙用</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2018/03/15/Hexo搭建博客No-II/"  title="Hexo搭建博客No-II">
- <strong>下一篇:</strong><br/> 
+ <strong>Next:</strong><br/> 
  <span>Hexo搭建博客No-II
 </span>
 </a>
@@ -230,16 +238,18 @@ var jiathis_config = {data_track_clickback:'true'};
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
+		
+			<li><a href="/categories/AD系列/" title="AD系列">AD系列<sup>1</sup></a></li>
 		
 			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
 		
@@ -249,17 +259,21 @@ var jiathis_config = {data_track_clickback:'true'};
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
+			<li><a href="/tags/AD/" title="AD">AD<sup>1</sup></a></li>
+		
 			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
+		
+			<li><a href="/tags/内网渗透/" title="内网渗透">内网渗透<sup>1</sup></a></li>
 		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
       <li><a href="http://www.freebuf.com" target="_blank" title="FreeBuf">FreeBuf</a></li>
       <li><a href="https://github.com/tears2015" target="_blank" title="ak-47 github">GitHub</a></li>
@@ -270,7 +284,7 @@ var jiathis_config = {data_track_clickback:'true'};
 
 
   <div class="rsspart">
-	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
