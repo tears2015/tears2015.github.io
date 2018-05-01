@@ -971,7 +971,7 @@ article .article-content p {
 article .article-content img,
 article .article-content video,
 article .article-content figure img {
-  max-width: 100%;
+  max-width: 60%;
   display: block;
   margin: auto;
   height: auto;
@@ -1868,6 +1868,9 @@ footer {
 }
 .copyright a:hover {
   color: #2ca6cb;
+}
+img.normal {
+  max-width: 50%;
 }
 .ds-highlight {
   color: #2ca6cb !important;

