@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo常用命令 | AK-47&#39;s blog</title>
+    <title>Linux通过crontab实现命令执行 | AK-47&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="AK-47">
     
-    <meta name="description" itemprop="description" content="Hexo常用命令">
+    <meta name="description" itemprop="description" content="linux系统一旦存在任意文件上传，便可以通过覆盖/etc/shadow或/etc/crontab来实现任意命令执行.">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="ak-47" />
-    <meta name="twitter:title" content="Hexo常用命令 | AK-47&#39;s blog" />
+    <meta name="twitter:title" content="Linux通过crontab实现命令执行 | AK-47&#39;s blog" />
       
-        <meta name="twitter:description" content="Hexo常用命令" />
+        <meta name="twitter:description" content="linux系统一旦存在任意文件上传，便可以通过覆盖/etc/shadow或/etc/crontab来实现任意命令执行." />
       
     
     
@@ -76,7 +76,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/03/19/Hexo常用命令/" title="Hexo常用命令" itemprop="url">Hexo常用命令</a>
+      <a href="/2018/05/09/Linux通过crontab实现命令执行/" title="Linux通过crontab实现命令执行" itemprop="url">Linux通过crontab实现命令执行</a>
   </h1>
   <!-- 显示作者
   <p class="article-author">By
@@ -85,8 +85,8 @@
     </p>
   -->  
   <p class="article-time">
-    <time datetime="2018-03-19T08:54:02.000Z" itemprop="datePublished">2018-03-19</time>
-    Updated:<time datetime="2018-03-20T01:11:53.779Z" itemprop="dateModified">2018-03-20</time>
+    <time datetime="2018-05-09T14:22:03.000Z" itemprop="datePublished">2018-05-09</time>
+    Updated:<time datetime="2018-05-09T15:24:19.452Z" itemprop="dateModified">2018-05-09</time>
     
   </p>
 </header>
@@ -96,76 +96,37 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo安装"><span class="toc-number">1.</span> <span class="toc-text">hexo安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简写"><span class="toc-number">2.</span> <span class="toc-text">简写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器"><span class="toc-number">3.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#监视文件变动"><span class="toc-number">4.</span> <span class="toc-text">监视文件变动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写作"><span class="toc-number">5.</span> <span class="toc-text">写作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参数说明"><span class="toc-number">5.1.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例如"><span class="toc-number">5.2.</span> <span class="toc-text">例如</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#布局文件路径"><span class="toc-number">6.</span> <span class="toc-text">布局文件路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署"><span class="toc-number">7.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#草稿"><span class="toc-number">8.</span> <span class="toc-text">草稿</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何卸载Hexo"><span class="toc-number">9.</span> <span class="toc-text">如何卸载Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#友情链接："><span class="toc-number">10.</span> <span class="toc-text">友情链接：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、计划任务"><span class="toc-number">1.</span> <span class="toc-text">一、计划任务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Crontab-周期性任务管理"><span class="toc-number">1.1.</span> <span class="toc-text">Crontab 周期性任务管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#etc-crontab"><span class="toc-number">1.2.</span> <span class="toc-text">/etc/crontab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#var-spool-cron"><span class="toc-number">1.3.</span> <span class="toc-text">/var/spool/cron/</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见操作"><span class="toc-number">1.4.</span> <span class="toc-text">常见操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.5.</span> <span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#备注"><span class="toc-number">1.6.</span> <span class="toc-text">备注</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、本地测试"><span class="toc-number">2.</span> <span class="toc-text">二、本地测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试环境"><span class="toc-number">2.1.</span> <span class="toc-text">测试环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换-etc-crontab"><span class="toc-number">2.2.</span> <span class="toc-text">替换/etc/crontab</span></a></li></ol></li></ol>
 		</div>
 		
-		<p><body onload="prettyPrint()"></body></p>
-<h1 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h1><pre class="prettyprint linenums">
-    npm install hexo -g #安装  
-    npm update hexo -g #升级  
-    hexo init #初始化
-</pre>
-
-<h1 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h1><pre class="prettyprint linenums">
-    hexo n "我的博客" == hexo new "我的博客" #新建文章
-    hexo p == hexo publish
-    hexo g == hexo generate #生成
-    hexo s == hexo server  #启动服务预览
-    hexo d == hexo deploy #部署
-</pre>
-
-<h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><pre class="prettyprint linenums">
-    hexo server   # Hexo会监视文件变动并自动更新，您无须重启服务器。
-    hexo server -s #静态模式
-    hexo server -p 5000 #更改端口
-    hexo server -i 192.168.1.1 #自定义 IP
-
-    hexo clean   #清除缓存
-    hexo g   #生成静态网页
-    hexo d   #开始部署
-</pre>
-
-<h1 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h1><pre class="prettyprint linenums">
-    hexo generate   #使用 Hexo 生成静态文件快速而且简单
-    hexo generate --watch   #监视文件变动
-</pre>
-
-<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><pre><code>hexo new [layout] &lt;title&gt;
-layout    布局
-title    标题
-date    文件建立日期
-</code></pre><h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p>title: 使用Hexo搭建个人博客<br>layout: post<br>date: 2014-03-03 19:07:43<br>comments: true<br>categories: Blog<br>tags: [Hexo]<br>keywords: Hexo, Blog<br>description: 页面描述信息  </p>
-<h2 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h2><pre class="prettyprint linenums">
-    hexo new page pageName  #新建页面
-    hexo new articleName  #新建文章
-</pre>
-
-<h1 id="布局文件路径"><a href="#布局文件路径" class="headerlink" title="布局文件路径"></a>布局文件路径</h1><pre class="prettyprint linenums">
-    post    source/_posts
-    page    source
-    draft    source/_drafts
-</pre>
-
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>两个命令的作用是相同的：</p>
+		<h1 id="一、计划任务"><a href="#一、计划任务" class="headerlink" title="一、计划任务"></a>一、计划任务</h1><p><body onload="prettyPrint()"></body></p>
+<h2 id="Crontab-周期性任务管理"><a href="#Crontab-周期性任务管理" class="headerlink" title="Crontab 周期性任务管理"></a>Crontab 周期性任务管理</h2><p>主要设置文件：<br>全局配置文件，位于文件：/etc/crontab<br>系统默认的设置，位于目录：/etc/cron.*/<br>用户定义的设置，位于文件：/var/spool/cron/用户名</p>
+<h2 id="etc-crontab"><a href="#etc-crontab" class="headerlink" title="/etc/crontab"></a>/etc/crontab</h2><p>系统任务配置文件。设置维护linux系统所需的任务，由linux系统及相关程序在安装时自动设置<br><img src="crontab-01.jpg" alt="/etc/crontab"></p>
+<h2 id="var-spool-cron"><a href="#var-spool-cron" class="headerlink" title="/var/spool/cron/"></a>/var/spool/cron/</h2><p>由用户自行设置（使用crontab命令）的cron计划任务将被保存到目录/var/spool/cron中，文件名与用户名相同。<br>Eg：root用户的cron计划任务保存在配置文件/var/spool/cron/root中</p>
+<h2 id="常见操作"><a href="#常见操作" class="headerlink" title="常见操作"></a>常见操作</h2><p>1.编辑用户的计划任务列表: crontab -e [-u 用户名]<br>2.查看用户的计划任务列表: crontab -l [-u 用户名]<br>3.删除用户的计划任务列表: crontab -r [-u 用户名]<br><img src="crontab-02.jpg" alt="/etc/crontab"><br><img src="crontab-03.jpg" alt="cmd"></p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>a) 每天早上7:50自动开启sshd服务，22:50关闭sshd服务</p>
 <pre class="prettyprint linenums">
-    hexo generate --deploy
-    hexo deploy --generate
-
-    hexo d  #部署  
-    hexo d -g  #可与hexo g合并为
+50 7 * * * /sbin/service sshd start
+50 22 * * * /sbin/service sshd stop
+</pre>
+b)  每隔5天清空一次FTP服务器公共目录“/var/ftp/pub”中的数据
+<pre class="prettyprint linenums">
+0 0 */5 * * /bin/rm -rf /var/ftp/pub/*
+</pre>
+c)  每周六的7:30重新启动系统中httpd服务
+<pre class="prettyprint linenums">
+30 7 * * 6 /sbin/service httpd restart
+</pre>
+d)  每周一、周三、周五下午17:30使用tar命令自动备份/etc/httpd目录
+<pre class="prettyprint linenums">
+30 17 * * 1,3,5 /bin/tar jcf httpdconf.tar.bz2 /etc/httpd
 </pre>
 
-<h1 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h1><pre class="prettyprint linenums">
-    hexo publish [layout] <title>
-</title></pre>
-
-<h1 id="如何卸载Hexo"><a href="#如何卸载Hexo" class="headerlink" title="如何卸载Hexo"></a>如何卸载Hexo</h1><pre class="prettyprint linenums">
-    npm uninstall hexo-cli -g  #3.0.0版本执行
-    npm uninstall hexo -g  #旧版本执行
-</pre>
-
-<h1 id="友情链接："><a href="#友情链接：" class="headerlink" title="友情链接："></a>友情链接：</h1><p><a href="https://www.jianshu.com/p/05289a4bc8b2" title="如何搭建一个独立博客——简明Github Pages与Hexo教程" target="_blank" rel="noopener">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
-<p><a href="http://wiki.jikexueyuan.com/project/hexo-document/commands.html" title="极客学院Hexo中文版指令" target="_blank" rel="noopener">极客学院Hexo中文版指令</a></p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>crond守护进程会自动检查/etc/crontab文件、/etc/cron.d/目录以及/var/spool/cron目录中的改变，所以修改后无需重启。</p>
+<p>但是测试发现：<strong> crontab -e 命令编辑当前用户的计划任务，所有系统不需要重启，可以直接生效。在 Ubuntu下直接在 /var/spool/cron/crontabs/目录下新建一个用户文件，在该文件中配置计划任务，需要调用 crontab /var/spool/cron/crontabs/root 才能使配置生效。</strong></p>
+<h1 id="二、本地测试"><a href="#二、本地测试" class="headerlink" title="二、本地测试"></a>二、本地测试</h1><h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><p>操作系统：Linux kali 4.14.0-kali3-amd64 </p>
+<h2 id="替换-etc-crontab"><a href="#替换-etc-crontab" class="headerlink" title="替换/etc/crontab"></a>替换/etc/crontab</h2><p>本地信件crontab文件，内容如下：<br><img src="crontab-04.jpg" alt="test01"></p>
+<p>使用该文件覆盖掉原有/etc/crontab文件，一分钟后打开/tmp/目录，可以看到生成的logtest.txt文件（无需重启，自动生效）。<br><img src="crontab-05.jpg" alt="test02"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -195,13 +156,13 @@ var jiathis_config = {data_track_clickback:'true'};
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  <a class="article-category-link" href="/categories/Linux/">Linux</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  <span></span> <a href="/tags/内网渗透/">内网渗透</a><a href="/tags/Linux/">Linux</a>
   </div>
 
 
@@ -210,19 +171,11 @@ var jiathis_config = {data_track_clickback:'true'};
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/03/21/shift后门妙用/" title="shift后门妙用">
-  <strong>Prev:</strong><br/>
-  <span>
-  shift后门妙用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/03/15/Hexo搭建博客No-II/"  title="Hexo搭建博客No-II">
+<a href="/2018/03/21/shift后门妙用/"  title="shift后门妙用">
  <strong>Next:</strong><br/> 
- <span>Hexo搭建博客No-II
+ <span>shift后门妙用
 </span>
 </a>
 </div>
@@ -232,7 +185,7 @@ var jiathis_config = {data_track_clickback:'true'};
 	<!-- 多说-->
 
 <section class="comment">
-<div class="ds-thread" data-thread-key="post-Hexo常用命令" data-title="Hexo常用命令" data-url="http://ak47-sec.com/2018/03/19/Hexo常用命令/"></div>
+<div class="ds-thread" data-thread-key="post-Linux通过crontab实现命令执行" data-title="Linux通过crontab实现命令执行" data-url="http://ak47-sec.com/2018/05/09/Linux通过crontab实现命令执行/"></div>
 </section>
 <!-- disqus-->
 

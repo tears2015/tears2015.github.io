@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ak47-sec.com/"/>
-  <updated>2018-05-01T06:58:51.029Z</updated>
+  <updated>2018-05-09T15:24:19.452Z</updated>
   <id>http://ak47-sec.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux通过crontab实现命令执行</title>
+    <link href="http://ak47-sec.com/2018/05/09/Linux%E9%80%9A%E8%BF%87crontab%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    <id>http://ak47-sec.com/2018/05/09/Linux通过crontab实现命令执行/</id>
+    <published>2018-05-09T14:22:03.000Z</published>
+    <updated>2018-05-09T15:24:19.452Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、计划任务"><a href="#一、计划任务" class="headerlink" title="一、计划任务"></a>一、计划任务</h1><p><body onload="prettyPrint()"></body></p><h2 id="Crontab-周期性任务管理"><a href="#Crontab-周期性任务管理" class="headerlink" title="Crontab 周期性任务管理"></a>Crontab 周期性任务管理</h2><p>主要设置文件：<br>全局配置文件，位于文件：/etc/crontab<br>系统默认的设置，位于目录：/etc/cron.*/<br>用户定义的设置，位于文件：/var/spool/cron/用户名</p><h2 id="etc-crontab"><a href="#etc-crontab" class="headerlink" title="/etc/crontab"></a>/etc/crontab</h2><p>系统任务配置文件。设置维护linux系统所需的任务，由linux系统及相关程序在安装时自动设置<br><img src="crontab-01.jpg" alt="/etc/crontab"></p><h2 id="var-spool-cron"><a href="#var-spool-cron" class="headerlink" title="/var/spool/cron/"></a>/var/spool/cron/</h2><p>由用户自行设置（使用crontab命令）的cron计划任务将被保存到目录/var/spool/cron中，文件名与用户名相同。<br>Eg：root用户的cron计划任务保存在配置文件/var/spool/cron/root中</p><h2 id="常见操作"><a href="#常见操作" class="headerlink" title="常见操作"></a>常见操作</h2><p>1.编辑用户的计划任务列表: crontab -e [-u 用户名]<br>2.查看用户的计划任务列表: crontab -l [-u 用户名]<br>3.删除用户的计划任务列表: crontab -r [-u 用户名]<br><img src="crontab-02.jpg" alt="/etc/crontab"><br><img src="crontab-03.jpg" alt="cmd"></p><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>a) 每天早上7:50自动开启sshd服务，22:50关闭sshd服务</p><pre class="prettyprint linenums">50 7 * * * /sbin/service sshd start50 22 * * * /sbin/service sshd stop</pre>b)  每隔5天清空一次FTP服务器公共目录“/var/ftp/pub”中的数据<pre class="prettyprint linenums">0 0 */5 * * /bin/rm -rf /var/ftp/pub/*</pre>c)  每周六的7:30重新启动系统中httpd服务<pre class="prettyprint linenums">30 7 * * 6 /sbin/service httpd restart</pre>d)  每周一、周三、周五下午17:30使用tar命令自动备份/etc/httpd目录<pre class="prettyprint linenums">30 17 * * 1,3,5 /bin/tar jcf httpdconf.tar.bz2 /etc/httpd</pre><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>crond守护进程会自动检查/etc/crontab文件、/etc/cron.d/目录以及/var/spool/cron目录中的改变，所以修改后无需重启。</p><p>但是测试发现：<strong> crontab -e 命令编辑当前用户的计划任务，所有系统不需要重启，可以直接生效。在 Ubuntu下直接在 /var/spool/cron/crontabs/目录下新建一个用户文件，在该文件中配置计划任务，需要调用 crontab /var/spool/cron/crontabs/root 才能使配置生效。</strong></p><h1 id="二、本地测试"><a href="#二、本地测试" class="headerlink" title="二、本地测试"></a>二、本地测试</h1><h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><p>操作系统：Linux kali 4.14.0-kali3-amd64 </p><h2 id="替换-etc-crontab"><a href="#替换-etc-crontab" class="headerlink" title="替换/etc/crontab"></a>替换/etc/crontab</h2><p>本地信件crontab文件，内容如下：<br><img src="crontab-04.jpg" alt="test01"></p><p>使用该文件覆盖掉原有/etc/crontab文件，一分钟后打开/tmp/目录，可以看到生成的logtest.txt文件（无需重启，自动生效）。<br><img src="crontab-05.jpg" alt="test02"></p>]]></content>
+    
+    <summary type="html">
+    
+      linux系统一旦存在任意文件上传，便可以通过覆盖/etc/shadow或/etc/crontab来实现任意命令执行.
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://ak47-sec.com/categories/Linux/"/>
+    
+    
+      <category term="内网渗透" scheme="http://ak47-sec.com/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="Linux" scheme="http://ak47-sec.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>shift后门妙用</title>
